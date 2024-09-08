@@ -12,4 +12,7 @@ export default {
 
 <style>
 /* Add your global styles here if needed */
+body{
+  background-image: url(./assets/bacground.jpg);
+}
 </style>

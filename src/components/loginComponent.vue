@@ -71,7 +71,7 @@
   
   <style scoped>
   /* Move your CSS styles here */
-  body {
+  /* body {
     background-color: #f8f9fa;
     display: flex;
     justify-content: center;
@@ -80,8 +80,9 @@
     margin: 0;
     background-image: url(../assets/bacground.jpg);
     background-size: contain;
-  }
-  .login-card {
+} */
+
+.login-card {
     border-radius: 25px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     max-width: 800px;
@@ -91,7 +92,92 @@
     background-color: rgba(255, 255, 255, 0);
     color: white;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  }
-  /* Additional styles here */
+}
+
+.card-body {
+    padding: 2rem;
+    background-color: rgba(241, 237, 237, 0.25);
+}
+
+.image-container img {
+    height: 70%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.form-outline {
+    position: relative;
+    margin-bottom: 1.5rem;
+}
+
+.icon-size {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    vertical-align:center;
+}
+
+.form-control {
+    width: 100%;
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    outline: none;
+    background-color: transparent;
+    color: white;
+}
+
+.form-control:focus {
+    border-color: #306de7;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.form-label {
+    position: absolute;
+    top: 20%;
+    left: 40px;
+    background-color: rgba(255, 255, 255, 0);
+    padding: 0 5px;
+    color: #aaa;
+    transition: 0.3s ease all;
+    pointer-events: none;
+    font-size: 14px;
+}
+
+.form-control:focus ~ .form-label,
+.form-control:not(:placeholder-shown) ~ .form-label {
+    top: -25px;
+    left: 25px;
+    font-size: 16px;
+    color: #ffffff;
+    background-color: rgba(255, 255, 255, 0);
+}
+
+.forgot-password {
+    text-align: right;
+    font-size: 0.8rem;
+}
+.not-user{
+    display: none;
+    top:78%;
+    left:35%;
+}
+
+@media (max-width: 815px) {
+    .image-container {
+        display: none;
+    }
+    .login-card {
+        max-width: 100%;
+    }
+    body {
+        background-size: cover;
+    }
+    .not-user{
+        display: block;
+    }
+}
+
   </style>
   
