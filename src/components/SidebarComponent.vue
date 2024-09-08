@@ -61,7 +61,7 @@ export default {
         }
 
          // Clear the AuthUser from localStorage
-         localStorage.setItem("authUser", null);
+         localStorage.setItem("authUser", JSON.stringify(null));
       }
 
       // Redirect to the login page using Vue Router

@@ -4,6 +4,7 @@ import LoginComponent from '../components/LoginComponent.vue';
 import SignupComponent from '../components/SignupComponent.vue';
 import DashboardComponent from '../components/DashboardComponent.vue';
 
+
 Vue.use(Router);
 
 const router = new Router({
@@ -29,16 +30,21 @@ const router = new Router({
       component: DashboardComponent,
       meta: { requiresAuth: true }, // Requires authentication
     },
+    // 404 redirect for any undefined routes
+    {
+      path: '*',
+      redirect: '/login',
+    },
   ],
 });
 
 // Navigation guard to protect routes
 router.beforeEach((to, from, next) => {
-  const authUser = localStorage.getItem('authUser');
-  
+  const authUser = JSON.parse(localStorage.getItem('authUser'));
+
   // Check if route requires authentication and if the user is authenticated
   if (to.matched.some(record => record.meta.requiresAuth)) {
-    if (!authUser || authUser.length === 0) {
+    if (!authUser || authUser === null) {
       // Redirect to login page if not authenticated
       next({ name: 'Login' });
     } else {
