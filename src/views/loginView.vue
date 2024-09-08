@@ -1,5 +1,5 @@
 <template>
-    <div class="body">
+    <div class="boddy">
       <Login />
     </div>
   </template>
@@ -15,13 +15,12 @@
   </script>
 
   <style scoped>
- body {
-    background-color: #f8f9fa;
+ .boddy {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    margin: 0;
+    margin: auto;
     background-image: url(../assets/bacground.jpg);
     background-size: contain;
 }

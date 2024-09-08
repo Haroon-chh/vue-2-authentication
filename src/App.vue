@@ -1,18 +1,39 @@
 <template>
   <div id="app">
-    <router-view></router-view>
+    <!-- Conditionally render sidebar except for Login and Signup pages -->
+    <div v-if="!hideSidebar">
+      <Sidebar />
+    </div>
+
+    <div :class="{ 'main-content': !hideSidebar }">
+      <router-view></router-view>
+    </div>
   </div>
 </template>
 
 <script>
+import Sidebar from './components/SidebarComponent.vue';
+
 export default {
-  name: 'App',
+  components: {
+    Sidebar,
+  },
+  computed: {
+    hideSidebar() {
+      // Check the current route and hide sidebar on Login or Signup
+      const routeName = this.$route.name;
+      return routeName === 'Login' || routeName === 'Signup';
+    },
+  },
 };
 </script>
 
 <style>
-/* Add your global styles here if needed */
-body{
-  background-image: url(./assets/bacground.jpg);
+/* Optional: Apply styling to main content when sidebar is present */
+.main-content {
+  margin-left: 250px; /* Adjust according to your sidebar width */
+  padding: 20px;
 }
+
+/* Add any global styles */
 </style>

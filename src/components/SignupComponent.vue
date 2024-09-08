@@ -1,4 +1,5 @@
 <template>
+    <div class="signup-body">
     <div class="signup-card">
       <div class="col-lg-7 form-container d-flex flex-column justify-content-center">
         <div class="card-body p-4">
@@ -51,6 +52,7 @@
       <div class="col-5 image-container">
         <img src="../assets/signup.jpg" class="img" alt="Sample image">
       </div>
+    </div>
     </div>
   </template>
   
@@ -126,8 +128,7 @@
   </script>
   
   <style scoped>
-  body {
-    background-color: #f8f9fa;
+  .signup-body {
     display: flex;
     justify-content: center;
     align-items: center;

@@ -1,4 +1,5 @@
 <template>
+  <div class="login-body">
     <div class="login-card">
       <div class="col-lg-7 form-container d-flex flex-column justify-content-center">
         <div class="card-body p-5">
@@ -31,6 +32,7 @@
           <p>Not a user? <router-link to="/signup" class="btn btn-primary">Sign Up</router-link></p>
         </div>
       </div>
+    </div>
     </div>
   </template>
   
@@ -71,8 +73,7 @@
   
   <style scoped>
   /* Move your CSS styles here */
-  /* body {
-    background-color: #f8f9fa;
+  .login-body {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -80,7 +81,7 @@
     margin: 0;
     background-image: url(../assets/bacground.jpg);
     background-size: contain;
-} */
+} 
 
 .login-card {
     border-radius: 25px;
