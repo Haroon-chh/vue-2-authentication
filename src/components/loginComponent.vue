@@ -26,12 +26,23 @@
           </form>
         </div>
       </div>
-      <div class="col-lg-5 image-container">
-        <img src="../assets//signup.jpg" class="img" alt="Sample image">
-        <div class="text-center text-black bg-white w-100 h-100 p-5 ">
-          <p>Not a user? <router-link to="/signup" class="btn btn-primary">Sign Up</router-link></p>
-        </div>
+      <div class="col-lg-5 image-container d-flex justify-content-center align-items-center">
+      <div class="text-center text-black w-100 h-100 p-4 d-flex flex-column justify-content-center">
+        <button class="btn btn-light border d-flex align-items-center justify-content-center shadow-sm py-2 my-3 px-1 w-100">
+          <img src="../assets/google-icon.png" width="25px" alt="Google" class="px-1">
+          <span>Login with Google</span>
+        </button>
+
+        <button class="btn btn-primary border d-flex align-items-center justify-content-center shadow-sm py-2 my-3 px-1 w-100">
+          <img src="../assets/fb-icon.png" width="25px" alt="Facebook" class="px-1">
+          <span>Login with Facebook</span>
+        </button>
+
+        <hr>
+        <p class="mt-2 pt-2">Not a user? <router-link to="/signup" class="btn btn-primary">Sign Up</router-link></p>
       </div>
+    </div>
+
     </div>
     </div>
   </template>
@@ -85,8 +96,7 @@
 
 .login-card {
     box-shadow: 0 5px 8px rgba(0, 0, 0, 0.3);
-    max-width: 800px;
-    margin: 20px;
+    min-width: 50%;
     display: flex;
     overflow: hidden;
     background-color: rgba(255, 255, 255, 0);
@@ -99,10 +109,9 @@
     background-color: rgba(129, 134, 129, 0.2);
 }
 
-.image-container img {
-    height: 70%;
-    width: 100%;
-    object-fit: cover;
+.image-container{
+    background-color:#e8e8e8;
+    width: 40%;
 }
 
 .form-outline {
@@ -166,7 +175,7 @@
 
 @media (max-width: 815px) {
     .image-container {
-        display: none;
+        display: none !important;
     }
     .login-card {
         max-width: 100%;
