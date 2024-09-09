@@ -12,6 +12,16 @@
         <span class="material-icons">dashboard</span>
         <span v-if="isExpanded" class="text">Dashboard</span>
       </router-link>
+      <!-- new icons need to be done -->
+      <router-link to="/dashboard/newData" class="menu-item">
+        <span class="material-icons">add_circle</span>
+        <span v-if="isExpanded" class="text">Data Entry</span>
+      </router-link>
+      <router-link to="/dashboard" class="menu-item">
+        <span class="material-icons">show_chart</span>
+        <span v-if="isExpanded" class="text">Current Data</span>
+      </router-link>
+      
       <div class="logout-container">
       <button class="btn btn-danger logout-button" @click="logout">
         <span class="material-icons">logout</span>
