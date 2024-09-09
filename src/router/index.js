@@ -1,9 +1,8 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import LoginComponent from '../components/LoginComponent.vue';
-import SignupComponent from '../components/SignupComponent.vue';
-import DashboardComponent from '../components/DashboardComponent.vue';
-
+import LoginView from '../views/loginView.vue'; 
+import SignupView from '../views/SignupView.vue';
+import DashboardView from '../views/DashboardView.vue';
 
 Vue.use(Router);
 
@@ -17,20 +16,21 @@ const router = new Router({
     {
       path: '/login',
       name: 'Login',
-      component: LoginComponent,
+      component: LoginView,
+      meta: { title: 'Login' },
     },
     {
       path: '/signup',
       name: 'Signup',
-      component: SignupComponent,
+      component: SignupView,
+      meta: { title: 'Signup' },  // Added title meta
     },
     {
       path: '/dashboard',
       name: 'Dashboard',
-      component: DashboardComponent,
-      meta: { requiresAuth: true }, // Requires authentication
+      component: DashboardView,
+      meta: { requiresAuth: true, title: 'Dashboard' },  // Added title meta
     },
-    // 404 redirect for any undefined routes
     {
       path: '*',
       redirect: '/login',
@@ -38,22 +38,22 @@ const router = new Router({
   ],
 });
 
-// Navigation guard to protect routes
+// Navigation guard to protect routes and set page title
 router.beforeEach((to, from, next) => {
   const authUser = JSON.parse(localStorage.getItem('authUser'));
+
+  // Set document title dynamically based on meta.title or fallback to default
+  document.title = to.meta.title || 'Default Title';
 
   // Check if route requires authentication and if the user is authenticated
   if (to.matched.some(record => record.meta.requiresAuth)) {
     if (!authUser || authUser === null) {
-      // Redirect to login page if not authenticated
-      next({ name: 'Login' });
+      next({ name: 'Login' });  // Redirect to login if not authenticated
     } else {
-      // Proceed to the requested page
-      next();
+      next();  // Proceed to the requested page
     }
   } else {
-    // Proceed if no authentication is required
-    next();
+    next();  // Proceed if no authentication is required
   }
 });
 
