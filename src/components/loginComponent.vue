@@ -79,25 +79,24 @@
     align-items: center;
     height: 100vh;
     margin: 0;
-    background-image: url(../assets/bacground.jpg);
+    background-image: url(../assets/bg3.jpg);
     background-size: contain;
 } 
 
 .login-card {
-    border-radius: 25px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 5px 8px rgba(0, 0, 0, 0.3);
     max-width: 800px;
     margin: 20px;
     display: flex;
     overflow: hidden;
     background-color: rgba(255, 255, 255, 0);
-    color: white;
+    color:white;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .card-body {
     padding: 2rem;
-    background-color: rgba(241, 237, 237, 0.25);
+    background-color: rgba(129, 134, 129, 0.2);
 }
 
 .image-container img {
@@ -177,6 +176,10 @@
     }
     .not-user{
         display: block;
+    }
+    .login-body{
+      background-size: cover;
+
     }
 }
 

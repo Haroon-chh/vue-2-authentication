@@ -128,6 +128,7 @@
   </script>
   
   <style scoped>
+  
   .signup-body {
     display: flex;
     justify-content: center;
@@ -139,8 +140,7 @@
 }
 
 .signup-card {
-    border-radius: 25px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 5px 8px rgba(0, 0, 0, 0.6);
     max-width: 800px;
     margin: 30px;
     display: flex;
