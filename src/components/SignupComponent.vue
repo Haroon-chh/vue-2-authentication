@@ -50,7 +50,20 @@
         </div>
       </div>
       <div class="col-5 image-container">
-        <img src="../assets/signup.jpg" class="img" alt="Sample image">
+        <div class="text-center text-black w-100 h-100 p-4 d-flex flex-column justify-content-center">
+        <button class="btn btn-light border d-flex align-items-center justify-content-center shadow-sm py-2 my-3 px-1 w-100">
+          <img src="../assets/google-icon.png" width="25px" alt="Google" class="px-1">
+          <span>Signup with Google</span>
+        </button>
+
+        <button class="btn btn-primary border d-flex align-items-center justify-content-center shadow-sm py-2 my-3 px-1 w-100">
+          <img src="../assets/fb-icon.png" width="25px" alt="Facebook" class="px-1">
+          <span>Signup with Facebook</span>
+        </button>
+
+        <hr>
+        <p class="mt-2 pt-2">Already a user? <router-link to="/login" class="btn btn-primary">Login</router-link></p>
+      </div>
       </div>
     </div>
     </div>
@@ -135,13 +148,13 @@
     align-items: center;
     height: 100vh;
     margin: 0;
-    background-image: url(../assets/bacground.jpg);
+    background-image: url(../assets/bg3.jpg);
     background-size: contain;
 }
 
 .signup-card {
-    box-shadow: 0 5px 8px rgba(0, 0, 0, 0.6);
-    max-width: 800px;
+    box-shadow: 0 5px 8px rgba(0, 0, 0, 0.3);
+    min-width: 55%;
     margin: 30px;
     display: flex;
     overflow: hidden;
@@ -152,13 +165,12 @@
 
 .card-body {
     padding: 2rem;
-    background-color: rgba(241, 237, 237, 0.25);
+    background-color: rgba(129, 134, 129, 0.2);
 }
 
-.image-container img {
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
+.image-container{
+    background-color:#e8e8e8;
+    width: 40%;
 }
 
 .form-outline {
@@ -218,7 +230,7 @@
 
 @media (max-width: 768px) {
     .image-container {
-        display: none;
+        display: none important;
     }
     .signup-card {
         max-width: 100%;

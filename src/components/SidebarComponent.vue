@@ -12,16 +12,17 @@
         <span class="material-icons">dashboard</span>
         <span v-if="isExpanded" class="text">Dashboard</span>
       </router-link>
-      <!-- Add other menu items here -->
-    </nav>
-
-    <!-- Logout Button -->
-    <div class="logout-container">
+      <div class="logout-container">
       <button class="btn btn-danger logout-button" @click="logout">
         <span class="material-icons">logout</span>
         <span v-if="isExpanded">Logout</span>
       </button>
     </div>
+      <!-- Add other menu items here -->
+    </nav>
+
+    <!-- Logout Button -->
+
   </aside>
 </template>
 
@@ -87,9 +88,9 @@ export default {
   top: 0;
   left: 0;
   height: 100vh;
-  background-color: var(--dark-color);
-  color: var(--light-color);
-  width: var(--collapsed-width);
+  background-color: #02141d;
+  color: #ecf0f1;
+  width: 60px;
   transition: width 0.3s ease;
   display: flex;
   flex-direction: column;
@@ -99,7 +100,7 @@ export default {
 }
 
 .sidebar.is-expanded {
-  width: var(--sidebar-width);
+  width: 200px;
 }
 
 .logo {
@@ -113,7 +114,7 @@ export default {
 .menu-toggle {
   background: none;
   border: none;
-  color: var(--light-color);
+  color: #ecf0f1;
   font-size: 24px;
   cursor: pointer;
   margin-bottom: 2rem;
@@ -131,14 +132,14 @@ export default {
   align-items: center;
   padding: 1rem;
   text-decoration: none;
-  color: var(--light-color);
+  color: #ecf0f1;
   transition: background-color 0.3s ease;
   width: 100%;
   justify-content: center;
 }
 
 .menu-item:hover {
-  background-color: var(--primary-color);
+  background-color:#3498db;
 }
 
 .menu-item .material-icons {
@@ -165,7 +166,7 @@ export default {
   display: flex;
   align-items: center;
   background-color: #e74c3c;
-  color: var(--light-color);
+  color: #ecf0f1;
   border: none;
   padding: 0.5rem 1rem;
   cursor: pointer;
