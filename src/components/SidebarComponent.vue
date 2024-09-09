@@ -21,6 +21,11 @@
         <span class="material-icons">show_chart</span>
         <span v-if="isExpanded" class="text">Current Data</span>
       </router-link>
+
+    <div>
+      <InitialsAvatar />
+
+    </div>
       
       <div class="logout-container">
       <button class="btn btn-danger logout-button" @click="logout">
@@ -37,9 +42,12 @@
 </template>
 
 <script>
-
+import InitialsAvatar from './InitialsAvatar.vue';
 export default {
   name: 'SidebarComponent',
+  components: {
+    InitialsAvatar
+  },
   data() {
     return {
       isExpanded: false,
