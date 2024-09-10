@@ -1,25 +1,30 @@
 <template>
-    <div>
+    <div class="dashboard-layout">
       <Sidebar />
-      <Dashboard />
-
+      <div class="main-content">
+        <!-- This is where your child routes (like the form) will be rendered -->
+        <router-view />
+      </div>
     </div>
   </template>
   
   <script>
-  import Sidebar from '@/components/SidebarComponent.vue';
-  import Dashboard from '@/components/DashboardComponent.vue';
-
+  import Sidebar from '../components/SidebarComponent.vue';
   
   export default {
     components: {
       Sidebar,
-      Dashboard
     }
   };
   </script>
-
+  
   <style scoped>
- 
-</style>
+  .dashboard-layout {
+    display: flex;
+  }
+  
+  .main-content {
+    flex: 1;
+  }
+  </style>
   

@@ -13,11 +13,11 @@
         <span v-if="isExpanded" class="text">Dashboard</span>
       </router-link>
       <!-- new icons need to be done -->
-      <router-link to="/dashboard/newData" class="menu-item">
+      <router-link to="/dashboard/form" class="menu-item">
         <span class="material-icons">add_circle</span>
         <span v-if="isExpanded" class="text">Data Entry</span>
       </router-link>
-      <router-link to="/dashboard" class="menu-item">
+      <router-link to="/dashboard/form/table" class="menu-item">
         <span class="material-icons">show_chart</span>
         <span v-if="isExpanded" class="text">Current Data</span>
       </router-link>

@@ -31,7 +31,6 @@ export default {
 <style>
 /* Optional: Apply styling to main content when sidebar is present */
 .main-content {
-  margin-left: 250px; /* Adjust according to your sidebar width */
   padding: 20px;
 }
 

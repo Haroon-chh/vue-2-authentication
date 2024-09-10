@@ -3,6 +3,9 @@ import Router from 'vue-router';
 import LoginView from '../views/loginView.vue'; 
 import SignupView from '../views/SignupView.vue';
 import DashboardView from '../views/DashboardView.vue';
+import FormComponent from '../components/FormComponent.vue';
+import CustomerTable from '@/components/CustomerTable.vue';
+
 
 Vue.use(Router);
 
@@ -29,8 +32,25 @@ const router = new Router({
       path: '/dashboard',
       name: 'Dashboard',
       component: DashboardView,
-      meta: { requiresAuth: true, title: 'Dashboard' },  // Added title meta
+      meta: { requiresAuth: true, title: 'Dashboard' },
+      children: [
+        {
+          path: 'form',
+          name: 'Form',
+          component: FormComponent,
+          meta: { requiresAuth: true },
+          children: [
+            {
+              path: 'table',
+              name: 'CustomerTable',
+              component: CustomerTable,
+              meta: { requiresAuth: true }  // Meta for the child route
+            }
+          ]
+        }
+      ]
     },
+    
     {
       path: '*',
       redirect: '/login',

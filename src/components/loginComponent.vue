@@ -28,13 +28,13 @@
       </div>
       <div class="col-lg-5 image-container d-flex justify-content-center align-items-center">
       <div class="text-center text-black w-100 h-100 p-4 d-flex flex-column justify-content-center">
-        <button class="btn btn-light border d-flex align-items-center justify-content-center shadow-sm py-2 my-3 px-1 w-100">
-          <img src="../assets/google-icon.png" width="25px" alt="Google" class="px-1">
+        <button class="btn btn-light border d-flex align-items-center justify-content-center shadow-sm  my-3 px-1 w-100">
+          <img src="../assets/google-icon.png" width="35px" alt="Google" class="p-1 ">
           <span>Login with Google</span>
         </button>
 
-        <button class="btn btn-primary border d-flex align-items-center justify-content-center shadow-sm py-2 my-3 px-1 w-100">
-          <img src="../assets/fb-icon.png" width="25px" alt="Facebook" class="px-1">
+        <button class="btn btn-primary border d-flex align-items-center justify-content-center shadow-sm  my-3 px-1 w-100">
+          <img src="../assets/fb-icon.png" width="35px" alt="Facebook" class="p-1">
           <span>Login with Facebook</span>
         </button>
 
