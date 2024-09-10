@@ -38,13 +38,13 @@ const router = new Router({
           path: 'form',
           name: 'Form',
           component: FormComponent,
-          meta: { requiresAuth: true },
+          meta: { requiresAuth: true, title: 'DashBoard Form' },
           children: [
             {
               path: 'table',
               name: 'CustomerTable',
               component: CustomerTable,
-              meta: { requiresAuth: true }  // Meta for the child route
+              meta: { requiresAuth: true, title: 'Dashboard Table'}  // Meta for the child route
             }
           ]
         }

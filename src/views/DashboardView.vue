@@ -2,8 +2,7 @@
     <div class="dashboard-layout">
       <Sidebar />
       <div class="main-content">
-        <!-- This is where your child routes (like the form) will be rendered -->
-        <router-view />
+        <router-view /> <!-- Main content will display form and table here -->
       </div>
     </div>
   </template>
@@ -25,6 +24,7 @@
   
   .main-content {
     flex: 1;
+    flex-direction: row;
   }
   </style>
   
