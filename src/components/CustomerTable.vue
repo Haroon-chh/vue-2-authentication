@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="table-body">
       <h2>Customer List</h2>
       <table v-if="customers && customers.length">
         <thead>
@@ -43,6 +43,15 @@
   </script>
   
   <style scoped>
+  .table-body{
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Matches form box shadow */
+    background-color: #aaceb1;
+    border-radius: 10px;
+    padding: 20px;
+
+
+
+  }
 table {
   width: 100%;
   border-collapse: collapse;
@@ -50,6 +59,7 @@ table {
   border-radius: 8px;
   table-layout: fixed; /* Ensures table cells respect the width limits */
   height: 100%;
+  
 }
 
 thead {

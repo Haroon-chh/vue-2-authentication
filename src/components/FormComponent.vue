@@ -85,7 +85,7 @@
     flex: 1;
     padding: 20px;
     width: 60%;
-    background-color: #f1f3f5;
+    background-color: #aaceb1;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow */
   }
@@ -140,10 +140,6 @@
   /* Table Styling */
   .table-container {
     flex: 1;
-    padding: 20px;
-    background-color: #ffffff;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Matches form box shadow */
     max-width: 100%;
 
   }

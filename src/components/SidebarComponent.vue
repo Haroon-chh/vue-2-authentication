@@ -118,7 +118,7 @@ export default {
 }
 
 .sidebar.is-expanded {
-  width: 200px;
+  width: 170px;
 }
 
 .logo {
