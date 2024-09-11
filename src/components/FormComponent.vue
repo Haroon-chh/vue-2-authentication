@@ -1,3 +1,4 @@
+<!-- customer add form component -->
 <template>
     <div class="form-and-table-container">
       <div class="form-container">
