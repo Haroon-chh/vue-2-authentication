@@ -1,4 +1,3 @@
-<!-- customer add form component -->
 <template>
     <div class="form-and-table-container">
       <div class="form-container">
@@ -28,15 +27,16 @@
         </form>
       </div>
   
-      <!-- This is where the table will be rendered on the right -->
+      <!-- Table component rendered on the right -->
       <div class="table-container">
         <router-view />
       </div>
     </div>
   </template>
   
-  
   <script>
+  import { mapActions } from 'vuex';
+  
   export default {
     data() {
       return {
@@ -50,22 +50,13 @@
       };
     },
     methods: {
+      ...mapActions(['addCustomer']),
       addCustomer() {
-        // Get the current list of customers from localStorage
-        let customers = JSON.parse(localStorage.getItem('customers')) || [];
-        // Add the new customer to the array
-        customers.push(this.customer);
-        // Update localStorage with the new customer list
-        localStorage.setItem('customers', JSON.stringify(customers));
-        // Emit the customer-added event and pass the updated customers array
-        this.$emit('customer-added', customers);
-        // Clear the form after adding the customer
+        this.$store.dispatch('addCustomer', { ...this.customer });
         this.clearForm();
-        // Notify the user that the customer was added successfully
         alert('Customer added successfully!');
       },
       clearForm() {
-        // Reset the form fields
         this.customer = {
           name: '',
           address: '',
@@ -81,43 +72,33 @@
   <style scoped>
   .form-and-table-container {
     display: flex;
-    margin-left:10%;
     justify-content: space-between;
-    gap: 20px; /* Adds some space between the form and the table */
+    gap: 20px;
     padding: 20px;
   }
-  
   .form-container {
-    flex: 1; /* Form takes up 50% of the available width */
+    flex: 1;
     padding: 20px;
     background-color: #f9f9f9;
     border-radius: 8px;
-    max-width: 600px;
   }
-  
   .table-container {
-    flex: 1; /* Table takes up the remaining 50% of the available width */
+    flex: 1;
     padding: 20px;
     background-color: #ffffff;
     border-radius: 8px;
-    max-width: 800px;
   }
-  
   form div {
     margin-bottom: 15px;
   }
-  
   label {
     display: block;
     margin-bottom: 5px;
   }
-  
   input {
     width: 100%;
     padding: 8px;
-    box-sizing: border-box;
   }
-  
   button {
     padding: 10px 15px;
     background-color: #28a745;
@@ -125,7 +106,6 @@
     border: none;
     cursor: pointer;
   }
-  
   button:hover {
     background-color: #218838;
   }

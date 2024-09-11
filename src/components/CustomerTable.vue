@@ -1,8 +1,7 @@
-<!-- CustomerTable.vue -->
 <template>
     <div>
       <h2>Customer List</h2>
-      <table v-if="customers.length">
+      <table v-if="customers && customers.length">
         <thead>
           <tr>
             <th>Name</th>
@@ -27,25 +26,18 @@
   </template>
   
   <script>
+  import { mapGetters } from 'vuex';
+  
   export default {
     name: 'CustomerTable',
-    data() {
-      return {
-        customers: []
-      };
+    computed: {
+      ...mapGetters(['allCustomers']),
+      customers() {
+        return this.allCustomers || [];
+      }
     },
     mounted() {
-      this.loadCustomers();
-      window.addEventListener('customer-added', this.loadCustomers); // Listen for custom events
-    },
-    beforeDestroy() {
-      window.removeEventListener('customer-added', this.loadCustomers); // Clean up listener
-    },
-    methods: {
-      loadCustomers() {
-        const customers = JSON.parse(localStorage.getItem('customers')) || [];
-        this.customers = customers;
-      }
+      // Optionally, check if customers were already loaded from Vuex
     }
   };
   </script>
@@ -55,6 +47,7 @@
     width: 100%;
     border-collapse: collapse;
   }
+  
   th, td {
     padding: 8px;
     border: 1px solid #ddd;
