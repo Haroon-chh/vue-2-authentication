@@ -25,6 +25,7 @@
   <style scoped>
   .dashboard-layout {
     display: flex;
+    margin-top: 1%;
   }
   
   .main-content {

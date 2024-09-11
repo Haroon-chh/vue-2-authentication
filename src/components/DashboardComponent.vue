@@ -14,10 +14,21 @@
   <style scoped>
   /* Add any styles specific to the dashboard here */
   .headerr{
+
     width: 100%;
-    height: 5%;
-    background-color: rgb(85, 96, 105);
-    display: inline;
+    height: 10%;
+    background-color: #218837df;
+    display: block;
+    margin:0%;
+    position: fixed;
+    top: 0%;
+    overflow: hidden;
+    padding: 5px;
+
+  }
+ h1{
+    text-align: center;
+    color: rgb(232, 243, 233);
   }
   </style>
   
