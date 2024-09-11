@@ -22,10 +22,10 @@
         <span v-if="isExpanded" class="text">Current Data</span>
       </router-link>
 
-    <div>
+    
       <InitialsAvatar />
 
-    </div>
+    
       
       <div class="logout-container">
       <button class="btn btn-danger logout-button" @click="logout">
