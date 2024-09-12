@@ -1,6 +1,8 @@
 <template>
     <div class="page-layout">
       <Sidebar />
+      <Header />
+
       <div class="main-content">
         <Products />
       </div>
@@ -10,13 +12,16 @@
   <script>
   import Sidebar from '../components/SidebarComponent.vue';
   import Products from '../components/ApiProducts.vue';
+  import Header from '../components/HeaderComponent.vue';
+
 
 
   
   export default {
     components: {
       Sidebar,
-      Products
+      Products,
+      Header
     }
   };
   </script>
