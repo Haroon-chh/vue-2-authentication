@@ -28,8 +28,8 @@
   }
   
   .main-content {
-    flex: 1;
-    flex-direction: row;
+    margin-left: 3vw;
+    width: 100vw;
   }
   </style>
   
