@@ -2,7 +2,7 @@
     <div class="dashboard-layout">
       <Sidebar />
       <div class="main-content">
-        <Header />
+        <Header title="Welcome to Dashboard" />
 
         <router-view /> <!-- Main content will display form and table here -->
       </div>
@@ -11,7 +11,7 @@
   
   <script>
   import Sidebar from '../components/SidebarComponent.vue';
-  import Header from '../components/DashboardComponent.vue';
+  import Header from '../components/HeaderComponent.vue';
 
   
   export default {

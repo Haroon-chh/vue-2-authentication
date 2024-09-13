@@ -4,7 +4,7 @@ import LoginView from '../views/loginView.vue';
 import SignupView from '../views/SignupView.vue';
 import DashboardView from '../views/DashboardView.vue';
 import FormComponent from '../components/FormComponent.vue';
-import CustomerTable from '@/components/CustomerTable.vue';
+import CustomerTable from '../components/CustomerTable.vue';
 import ApiProductsView from '../views/ApiProductsView.vue';
 
 
