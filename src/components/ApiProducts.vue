@@ -1,7 +1,7 @@
 <template>
-    <div class="product-list">      
+    <div class="product-list">
       <div v-if="loading">Loading products...</div>
-      
+  
       <div v-else>
         <div v-if="products.length" class="container">
           <div class="row">
@@ -10,102 +10,98 @@
               :key="product.id" 
               class="col-md-4 col-sm-6 mb-4"
             >
-              <div class="product-card">
-                <div class="image-bg">
-                <img :src="product.image" :alt="product.title" class="product-image" />
-                </div>
-                <h3>{{ product.title }}</h3>
-                <p class="fw-bolder">{{ product.category }}</p>
-                <p class="fw-bold">${{ product.price.toFixed(2) }}</p>
-                <p class="rating">Rating: {{ product.rating.rate }} ({{ product.rating.count }} reviews)</p>
-                <p>{{ product.description }}</p>
-              </div>
+              <!-- Using ProductCard Component -->
+              <ProductCard :product="product" />
             </div>
           </div>
   
-            <!-- Bootstrap Pagination -->
-            <nav aria-label="Page navigation">
+          <!-- Bootstrap Pagination -->
+          <nav aria-label="Page navigation">
             <ul class="pagination justify-content-center">
-                <li class="page-item" :class="{ disabled: currentPage === 1 }">
+              <li class="page-item" :class="{ disabled: currentPage === 1 }">
                 <button class="page-link" @click="prevPage">Previous</button>
-                </li>
-                <li 
-                v-for="page in totalPages" 
-                :key="page" 
-                class="page-item" 
+              </li>
+              <li
+                v-for="page in totalPages"
+                :key="page"
+                class="page-item"
                 :class="{ active: page === currentPage }"
                 :style="{ backgroundColor: page === currentPage ? '#218837' : '' }"
-                >
+              >
                 <button class="page-link" @click="changePage(page)">{{ page }}</button>
-                </li>
-                <li class="page-item" :class="{ disabled: currentPage === totalPages }">
+              </li>
+              <li class="page-item" :class="{ disabled: currentPage === totalPages }">
                 <button class="page-link" @click="nextPage">Next</button>
-                </li>
+              </li>
             </ul>
-            </nav>
-
+          </nav>
         </div>
-        
+  
         <div v-else>No products available</div>
       </div>
     </div>
   </template>
   
   <script>
-  import axios from 'axios';
-  
-  export default {
-    name: 'ApiProducts',
-    data() {
-      return {
-        products: [],
-        loading: true,
-        error: null,
-        currentPage: 1, // Current active page
-        itemsPerPage: 6, // Number of products per page
-      };
+import axios from 'axios';
+import ProductCard from './ProductCard.vue'; // Import the ProductCard component
+
+export default {
+  name: 'ApiProducts',
+  components: {
+    ProductCard, // Register the ProductCard component here
+  },
+  data() {
+    return {
+      products: [],
+      loading: true,
+      error: null,
+      currentPage: 1, // Current active page
+      itemsPerPage: 6, // Number of products per page
+    };
+  },
+  computed: {
+    totalPages() {
+      return Math.ceil(this.products.length / this.itemsPerPage); // Calculate total pages
     },
-    computed: {
-      totalPages() {
-        return Math.ceil(this.products.length / this.itemsPerPage); // Calculate total pages
-      },
-      paginatedProducts() {
-        const start = (this.currentPage - 1) * this.itemsPerPage;
-        const end = start + this.itemsPerPage;
-        return this.products.slice(start, end); // Get products for the current page
-      },
+    paginatedProducts() {
+      const start = (this.currentPage - 1) * this.itemsPerPage;
+      const end = start + this.itemsPerPage;
+      return this.products.slice(start, end); // Get products for the current page
     },
-    methods: {
-      async fetchProducts() {
-        try {
-          const response = await axios.get('https://fakestoreapi.com/products');
-          this.products = response.data;
-        } catch (error) {
-          this.error = 'Error fetching products';
-          console.error(error);
-        } finally {
-          this.loading = false;
-        }
-      },
-      changePage(page) {
-        this.currentPage = page; // Change current page
-      },
-      prevPage() {
-        if (this.currentPage > 1) {
-          this.currentPage--;
-        }
-      },
-      nextPage() {
-        if (this.currentPage < this.totalPages) {
-          this.currentPage++;
-        }
-      },
+  },
+  methods: {
+    async fetchProducts() {
+      try {
+        const response = await axios.get('https://fakestoreapi.com/products');
+        this.products = response.data;
+      } catch (error) {
+        this.error = 'Error fetching products';
+        console.error(error);
+      } finally {
+        this.loading = false;
+      }
     },
-    mounted() {
-      this.fetchProducts();
+    changePage(page) {
+      this.currentPage = page; // Change current page
     },
-  };
-  </script>
+    prevPage() {
+      if (this.currentPage > 1) {
+        this.currentPage--;
+      }
+    },
+    nextPage() {
+      if (this.currentPage < this.totalPages) {
+        this.currentPage++;
+      }
+    },
+  },
+  mounted() {
+    this.fetchProducts();
+  },
+};
+</script>
+
   
   <style scoped>
   .product-list {

@@ -1,7 +1,7 @@
 <template>
     <div class="signup-body">
     <div class="signup-card">
-      <div class="col-lg-7 form-container d-flex flex-column justify-content-center">
+      <div class="col-lg-7 form-container d-flex flex-column justify-content-center p-0">
         <div class="card-body p-4">
           <p class="text-center h2 fw-semibold mb-4 mx-1 mx-md-4 mt-2">Sign Up as new User</p>
           <form class="mx-1 mx-md-4" @submit.prevent="signup">
@@ -149,7 +149,7 @@
     height: 100vh;
     margin: 0;
     background-image: url(../assets/bg3.jpg);
-    background-size: contain;
+    background-size: cover;
 }
 
 .signup-card {
