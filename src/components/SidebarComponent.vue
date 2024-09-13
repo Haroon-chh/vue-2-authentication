@@ -22,7 +22,7 @@
         <span v-if="isExpanded" class="text">Current Data</span>
       </router-link>
 
-      <router-link to="/apiData" class="menu-item">
+      <router-link to="/apiProducts" class="menu-item">
         <span class="material-icons">api</span>
         <span v-if="isExpanded" class="text">Api Data</span>
       </router-link>

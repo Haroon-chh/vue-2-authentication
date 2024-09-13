@@ -5,7 +5,7 @@ import SignupView from '../views/SignupView.vue';
 import DashboardView from '../views/DashboardView.vue';
 import FormComponent from '../components/FormComponent.vue';
 import CustomerTable from '@/components/CustomerTable.vue';
-import ApiUsersView from '../views/ApiProductsView.vue';
+import ApiProductsView from '../views/ApiProductsView.vue';
 
 
 
@@ -53,10 +53,10 @@ const router = new Router({
       ]
     },
     {
-      path: '/apiData',
-      name: 'ApiData',
-      component: ApiUsersView,
-      meta: { requiresAuth:true ,title: 'ApiUsers' },
+      path: '/apiProducts',
+      name: 'ApiProducts',
+      component: ApiProductsView,
+      meta: { requiresAuth:true ,title: 'Api Products' },
     },
     
     {

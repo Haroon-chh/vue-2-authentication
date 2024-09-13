@@ -1,7 +1,7 @@
 <template>
     <div class="page-layout">
       <Sidebar />
-      <Header />
+      <Header title="Our Products" />
 
       <div class="main-content">
         <Products />

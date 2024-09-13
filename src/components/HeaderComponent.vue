@@ -1,6 +1,6 @@
 <template>
     <div class="headerr">
-      <h1>Our Products</h1>
+      <h1>{{ title }}</h1>
       <!-- Add any additional components or dashboard content here -->
     </div>
   </template>
@@ -8,25 +8,29 @@
   <script>
   export default {
     name: 'HeaderComponent',
+    props: {
+      title: {
+        type: String,
+        required: true, // Makes sure that the title prop is provided
+      }
+    }
   };
   </script>
   
   <style scoped>
-  /* Add any styles specific to the dashboard here */
-  .headerr{
-
+  .headerr {
     width: 100%;
     height: 10%;
     background-color: #218837df;
     display: block;
-    margin:0%;
+    margin: 0;
     position: fixed;
-    top: 0%;
+    top: 0;
     overflow: hidden;
     padding: 5px;
-
   }
- h1{
+  
+  h1 {
     text-align: center;
     color: rgb(232, 243, 233);
   }
