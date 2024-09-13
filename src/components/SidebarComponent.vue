@@ -14,7 +14,7 @@
       </router-link>
       <!-- new icons need to be done -->
       <router-link to="/dashboard/form" class="menu-item">
-        <span class="material-icons">add_circle</span>
+        <span class="material-icons">person_add</span>
         <span v-if="isExpanded" class="text">Data Entry</span>
       </router-link>
       <router-link to="/dashboard/form/table" class="menu-item">
@@ -24,7 +24,12 @@
 
       <router-link to="/apiProducts" class="menu-item">
         <span class="material-icons">api</span>
-        <span v-if="isExpanded" class="text">Api Data</span>
+        <span v-if="isExpanded" class="text">Api Products</span>
+      </router-link>
+
+      <router-link to="/addProducts" class="menu-item">
+        <span class="material-icons">add_circle</span>
+        <span v-if="isExpanded" class="text">Add Products</span>
       </router-link>
 
     

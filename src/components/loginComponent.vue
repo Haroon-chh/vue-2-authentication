@@ -7,7 +7,7 @@
           <form class="mx-1 mx-md-4" @submit.prevent="login">
             <div class="d-flex flex-row align-items-center mb-4 mt-5 pb-2 form-outline">
               <img src="../assets/email-icon.png" alt="Email Icon" class="icon-size">
-              <input type="email" v-model="email" class="form-control" placeholder=" " required />
+              <input type="email" v-model="email" class="form-control" autocomplete="email" placeholder=" " required />
               <label class="form-label" for="email">Your Email</label>
             </div>
             <div class="d-flex flex-row align-items-center mb-2 mt-0 form-outline">

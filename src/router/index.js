@@ -6,6 +6,8 @@ import DashboardView from '../views/DashboardView.vue';
 import FormComponent from '../components/FormComponent.vue';
 import CustomerTable from '../components/CustomerTable.vue';
 import ApiProductsView from '../views/ApiProductsView.vue';
+import AddProductsView from '../views/AddProductView.vue';
+
 
 
 
@@ -57,6 +59,12 @@ const router = new Router({
       name: 'ApiProducts',
       component: ApiProductsView,
       meta: { requiresAuth:true ,title: 'Api Products' },
+    },
+    {
+      path: '/addProducts',
+      name: 'AddProducts',
+      component: AddProductsView,
+      meta: { requiresAuth:true ,title: 'Add Product' },
     },
     
     {
