@@ -28,7 +28,20 @@
     top: 0;
     overflow: hidden;
     padding: 5px;
+    z-index: 2;
   }
+  @media (max-width: 815px) {
+    .headerr{
+        width: 95%;
+    }
+    h1{
+        margin: auto;
+        position: relative;
+        top: 15%;
+    }
+  }
+
+
   
   h1 {
     text-align: center;

@@ -36,5 +36,10 @@
     margin-left: 3vw;
     width: 100vw;
   }
+  @media (max-width: 815px) {
+    .main-content{
+    width: 90vw;
+  }
+  }
   </style>
   
