@@ -7,6 +7,8 @@ import FormComponent from '../components/FormComponent.vue';
 import CustomerTable from '../components/CustomerTable.vue';
 import ApiProductsView from '../views/ApiProductsView.vue';
 import AddProductsView from '../views/AddProductView.vue';
+import ProductDetail from '../components/ProductDetail.vue'; // Path to your ProductDetail.vue
+
 
 
 
@@ -65,6 +67,13 @@ const router = new Router({
       name: 'AddProducts',
       component: AddProductsView,
       meta: { requiresAuth:true ,title: 'Add Product' },
+    },
+    {
+      path: '/details/:id',
+      name: 'ProductDetail',
+      component: ProductDetail,
+      meta: { requiresAuth:true ,title: 'Products Details' },
+
     },
     
     {

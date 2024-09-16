@@ -11,7 +11,7 @@
         </div>
       </v-card-text>
       <v-card-actions>
-        <v-btn class="buy-button" text>Buy Now</v-btn>
+        <v-btn class="buy-button" @click="goToProductDetail">Buy Now</v-btn>
       </v-card-actions>
     </v-card>
   </template>
@@ -20,8 +20,6 @@
   import Vue from 'vue'
   import Vuetify from 'vuetify/lib'
   import 'vuetify/dist/vuetify.min.css'
-  
-  // Import specific Vuetify components
   import { VCard, VImg, VCardTitle, VCardSubtitle, VCardText, VCardActions, VBtn } from 'vuetify/lib'
   
   Vue.use(Vuetify)
@@ -43,6 +41,12 @@
       VCardText,
       VCardActions,
       VBtn
+    },
+    methods: {
+      goToProductDetail() {
+        // Use Vue Router to navigate to the product detail page
+        this.$router.push({ name: 'ProductDetail', params: { id: this.product.id } });
+      }
     }
   }
   </script>
@@ -87,16 +91,16 @@
     font-weight: bold;
     color: #555;
   }
-  .buy-button{
-    background-color: #218837b4;
+  
+  .buy-button {
+    background-color: #218837df !important;
     position: absolute;
     bottom: 2%;
-
+    color: white;
   }
-  .buy-button:hover{
-    background-color: #218837df;
-    
-
+  
+  .buy-button:hover {
+    background-color: #218837 !important;
   }
   </style>
   
