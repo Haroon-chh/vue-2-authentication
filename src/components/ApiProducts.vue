@@ -99,8 +99,10 @@
     methods: {
       async fetchProducts() {
         try {
-          await new Promise((resolve) => setTimeout(resolve, 2000));
-          const response = await axios.get('https://fakestoreapi.com/products');
+          // Simulate loading delay
+          await new Promise((resolve) => setTimeout(resolve, 1000));
+          // Fetch products from the updated API
+          const response = await axios.get('https://api.escuelajs.co/api/v1/products');
           this.products = response.data;
         } catch (error) {
           this.error = 'Error fetching products';
@@ -121,9 +123,6 @@
         if (this.currentPage < this.totalPages) {
           this.currentPage++;
         }
-      },
-      toggleLoading() {
-        this.loading = !this.loading;
       },
     },
     mounted() {
@@ -147,7 +146,6 @@
         flex-direction: column;
     }
   }
-
   
   .skeleton-wrapper {
     display: flex;

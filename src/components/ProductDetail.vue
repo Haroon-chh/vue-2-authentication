@@ -3,16 +3,16 @@
       <!-- Product Image Carousel using Bootstrap -->
       <div id="productCarousel" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
-          <div 
-            v-for="(image, index) in productImages" 
-            :key="index" 
+          <div
+            v-for="(image, index) in productImages"
+            :key="index"
             :class="['carousel-item', { active: index === 0 }]"
           >
-            <img :src="image" class="d-block w-100 product-image" alt="Product Image">
+            <img :src="image" class="d-block w-100 product-image" alt="Product Image" />
           </div>
         </div>
         <!-- Carousel controls -->
-        <button class="carousel-control-prev" type="button" data-bs-target="#productCarousel" data-bs-slide="prev"  >
+        <button class="carousel-control-prev" type="button" data-bs-target="#productCarousel" data-bs-slide="prev">
           <span class="carousel-control-prev-icon rounded-5 bg-dark" aria-hidden="true"></span>
           <span class="visually-hidden">Previous</span>
         </button>
@@ -26,7 +26,7 @@
       <div class="product-info mt-4">
         <h1>{{ product.title }}</h1>
         <p class="price"><strong>Price:</strong> ${{ product.price }}</p>
-        <p class="type"><strong>Type:</strong> {{ product.category }}</p>
+        <p class="type"><strong>Type:</strong> {{ product.category.name }}</p>
         <p class="description"><strong>Description:</strong> {{ product.description }}</p>
       </div>
   
@@ -67,21 +67,16 @@
     async created() {
       const productId = this.$route.params.id; // Get product ID from route
       try {
-        const response = await axios.get(`https://fakestoreapi.com/products/${productId}`);
+        const response = await axios.get(`https://api.escuelajs.co/api/v1/products/${productId}`);
         this.product = response.data;
   
-        // Set up product images (1 real, others dummy)
-        this.productImages = [
-          this.product.image, // real product image
-          'https://picsum.photos/id/237/200/300', 
-          'https://picsum.photos/seed/picsum/200/300', // another dummy image
-        ];
+        // Set up product images using the JSON structure
+        this.productImages = this.product.images;
   
         // Set stars based on rating
         if (this.product.rating) {
           this.generateStarRating(this.product.rating.rate);
         }
-  
       } catch (error) {
         console.error('Error fetching product details:', error);
       }
@@ -93,7 +88,7 @@
       // Method to generate star ratings
       generateStarRating(rating) {
         const fullStars = Math.floor(rating);
-        const halfStar = rating % 1 >= 0.5 ? true : false;
+        const halfStar = rating % 1 >= 0.5;
         const emptyStars = 5 - Math.ceil(rating);
   
         this.starsArray = [];
