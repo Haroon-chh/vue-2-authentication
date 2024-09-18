@@ -1,3 +1,4 @@
+<!-- its component + view  -->
 <template>
     <div class="product-detail container">
       <!-- Product Image Carousel using Bootstrap -->
@@ -54,7 +55,7 @@
   
   <script>
   import axios from 'axios';
-  
+
   export default {
     name: 'ProductDetail',
     data() {
