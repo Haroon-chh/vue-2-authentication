@@ -72,7 +72,7 @@
   
           localStorage.setItem("users", JSON.stringify(users));
           localStorage.setItem("authUser", JSON.stringify(foundUser));
-          this.$router.push("/dashboard");
+          this.$router.push("/apiProducts");
         } else {
           alert("Wrong email or password. Please try again.");
         }
